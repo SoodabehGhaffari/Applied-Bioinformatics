@@ -1,0 +1,33 @@
+Lecture 14
+Qustion 1:
+$ bio align THISLINE ISALIGNED -matrix BLOSUM90
+# seq1 (8) vs seq2 (9)
+# pident=54.5% len=11 ident=6 mis=0 del=2 ins=3
+# semiglobal: score=11.0 matrix=BLOSUM90 gapopen=11 gapextend=1
+THIS-LI-NE-
+--||-||-||-
+--ISALIGNED
+
+percent identity=identical/total length=6/11
+
+
+$ bio align THISLINE ISALIGNED -matrix BLOSUM90 --global
+# seq1 (8) vs seq2 (9)
+# pident=22.2% len=9 ident=2 mis=6 del=0 ins=1
+# global: score=-10.0 matrix=BLOSUM90 gapopen=11 gapextend=1
+THISLINE-
+......||-
+ISALIGNED
+
+percent identity=identical/total length=2/9=22.2%
+
+
+question 2:
+I came up with the scring below. We see there is two gaps (without gap extension), so the gap opening score should not be high and we do not need to consider any scoring for gap extension. Also, we obsrve that there is no mismatch, so  it is intuitvely concluded that the mismatch should be penlarized with high score (specifically higher than match score). Therefore, I picked the match score 5 and mismatch score 6 and gap opening 1 (See the result below).
+$ bio align ISALIGNED THISLINE --match 5 -mismatch 6 -open 1
+# seq1 (9) vs seq2 (8)
+# pident=54.5% len=11 ident=6 mis=0 del=3 ins=2
+# semiglobal: score=25.0 matrix=BLOSUM62 gapopen=1 gapextend=1
+--ISALIGNED
+--||-||-||-
+THIS-LI-NE-

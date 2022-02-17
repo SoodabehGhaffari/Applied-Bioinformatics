@@ -1,0 +1,11 @@
+Lecture 13
+C=N*L/G
+1. 10=N*150/(5.44*10^6) ---> N= 0.036266667 * 10^7= 3.6266667*10^5
+P=exp(-C) P=exp(-10)=4.53999E-5 
+Number of bases are not sequenced: 5.44*10^6*4.53999E-5=246.97~247
+
+2.L=C*G/N L=25*5.44E6/(1E6)=136
+Number of bases are not sequenced:exp(-25)*5.44E6=7.55504E-05~0
+
+3. Cmax=10E6*250/(5.44E6)=459.55~460
+number of samples=Cmax/C=460/10=46
