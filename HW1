@@ -1,0 +1,74 @@
+Applied bioinformatics:homework for the week one
+Soodabeh Ghaffari 
+
+Lecture 1:
+1.	Done
+
+2.	I followed the book’s instruction for the conda/mamba installation:
+	a.	URL=https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+	b.	curl $URL > miniconda-installer.sh
+	c.	bash miniconda-installer.sh -b
+
+3.	We can check the version of Conda by conda -V, its version is 4.8.3. There are also other ways by installing a specific software with conda, and so on.
+
+4.	Yes, I installed samtools by conda install -c bioconda samtools
+
+5.	Samtools version is 1.13(using htslib 1.13)
+
+
+Lecture 2:
+1. The command is not described in the book and I think it is really usefull:
+du --display disk usage statistics
+I would use this command when there is shortage of storage space in my home/work directory and I want to identify files/folders with the greatest size.
+
+2. The following is the list of features of du. Without using (-h), the output is not easy to read. The flag (-h) makes output human-readable.
+ 
+
+     -a      Display an entry for each file in a file hierarchy.
+
+     -c      Display a grand total.
+
+     -d depth
+             Display an entry for all files and directories depth directories deep.
+
+     -H      Symbolic links on the command line are followed, symbolic links in file hierarchies are
+             not followed.
+
+     -h      "Human-readable" output.  Use unit suffixes: Byte, Kilobyte, Megabyte, Gigabyte, Ter-
+             abyte and Petabyte.
+
+     -I mask
+             Ignore files and directories matching the specified mask.
+
+     -g      Display block counts in 1073741824-byte (1-Gbyte) blocks.
+
+     -k      Display block counts in 1024-byte (1-Kbyte) blocks.
+
+     -L      Symbolic links on the command line and in file hierarchies are followed.
+
+     -m      Display block counts in 1048576-byte (1-Mbyte) blocks.
+
+     -P      No symbolic links are followed.  This is the default.
+
+     -r      Generate messages about directories that cannot be read, files that cannot be opened,
+             and so on.  This is the default case.  This option exists solely for conformance with
+             X/Open Portability Guide Issue 4 (``XPG4'').
+
+     -s      Display an entry for each specified file.  (Equivalent to -d 0)
+
+     -x      File system mount points are not traversed
+
+3.    ls -lh
+
+4. rm -i
+
+5. done
+6. done
+7. 
+	The required path is ~/work/IPRO_Suite/../NewIPRO_Suite/./IPRO/
+
+	Yes, I can make a path that is five deep, even though my folders are nested less than five deep by using the current directory or parent directory such as the above path.
+
+
+
+
