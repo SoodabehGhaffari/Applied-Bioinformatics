@@ -1,0 +1,54 @@
+genome:
+Read 10000 spots for SRR1039508
+Written 10000 spots for SRR1039508
+bwa:
+20016 + 0 in total (QC-passed reads + QC-failed reads)
+20000 + 0 primary
+0 + 0 secondary
+16 + 0 supplementary
+0 + 0 duplicates
+0 + 0 primary duplicates
+1573 + 0 mapped (7.86% : N/A)
+1557 + 0 primary mapped (7.78% : N/A)
+20000 + 0 paired in sequencing
+10000 + 0 read1
+10000 + 0 read2
+1138 + 0 properly paired (5.69% : N/A)
+1416 + 0 with itself and mate mapped
+141 + 0 singletons (0.71% : N/A)
+0 + 0 with mate mapped to a different chr
+0 + 0 with mate mapped to a different chr (mapQ>=5)
+bbmap:
+19993 + 7 in total (QC-passed reads + QC-failed reads)
+19993 + 7 primary
+0 + 0 secondary
+0 + 0 supplementary
+0 + 0 duplicates
+0 + 0 primary duplicates
+1544 + 0 mapped (7.72% : 0.00%)
+1544 + 0 primary mapped (7.72% : 0.00%)
+19993 + 7 paired in sequencing
+9994 + 6 read1
+9999 + 1 read2
+1154 + 0 properly paired (5.77% : 0.00%)
+1348 + 0 with itself and mate mapped
+196 + 0 singletons (0.98% : 0.00%)
+0 + 0 with mate mapped to a different chr
+0 + 0 with mate mapped to a different chr (mapQ>=5)
+bbmap2:
+19997 + 3 in total (QC-passed reads + QC-failed reads)
+19997 + 3 primary
+0 + 0 secondary
+0 + 0 supplementary
+0 + 0 duplicates
+0 + 0 primary duplicates
+12557 + 0 mapped (62.79% : 0.00%)
+12557 + 0 primary mapped (62.79% : 0.00%)
+19997 + 3 paired in sequencing
+9997 + 3 read1
+10000 + 0 read2
+1512 + 0 properly paired (7.56% : 0.00%)
+8540 + 0 with itself and mate mapped
+4017 + 0 singletons (20.09% : 0.00%)
+0 + 0 with mate mapped to a different chr
+0 + 0 with mate mapped to a different chr (mapQ>=5)
