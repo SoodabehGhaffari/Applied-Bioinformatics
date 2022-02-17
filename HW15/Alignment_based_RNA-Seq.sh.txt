@@ -1,0 +1,56 @@
+# Stop on errors. Print the commands.
+set -uex
+
+# Download the reference genome.
+wget -q -nc http://data.biostarhandbook.com/books/rnaseq/data/golden.genome.tar.gz
+
+# Unpack the reference genome.
+tar xzvf golden.genome.tar.gz
+
+# Download the data
+wget -q -nc http://data.biostarhandbook.com/books/rnaseq/data/golden.reads.tar.gz
+
+# Unpack the data
+tar zxvf golden.reads.tar.gz
+
+# The indexed reference genome.
+IDX=refs/genome.fa
+
+# Build the hisat2 genome index.
+hisat2-build $IDX $IDX
+
+# Index the reference genome with samtools.
+samtools faidx $IDX
+
+# Create the root ids of the data layout.
+parallel -j 1 echo {1}_{2} ::: BORED EXCITED ::: 1 2 3 > ids
+
+# Create the BAM folder.
+mkdir -p bam
+
+# Align the FASTQ files to the reference genome.
+cat ids | parallel "hisat2 -x $IDX -1 reads/{}_R1.fq -2 reads/{}_R2.fq | samtools sort > bam/{}.bam"
+
+# Index each BAM file.
+cat ids | parallel  "samtools index bam/{}.bam"
+
+# First we turn the each BAM file into BedGraph coverage.
+cat ids | parallel "bedtools genomecov -ibam  bam/{}.bam -split -bg  > bam/{}.bg"
+
+# Then convert the BedGraph coverage into BigWig coverage.
+cat ids | parallel "bedGraphToBigWig bam/{}.bg  ${IDX}.fai bam/{}.bw"
+
+# Run featureCounts on BAM files in the right order.
+featureCounts -p -a refs/features.gff -o counts.txt bam/BORED_?.bam bam/EXCITED_?.bam
+
+# Download the edger R script.
+curl http://data.biostarhandbook.com/books/rnaseq/code/edger.r > edger.r
+
+# Download the heatmap R script.
+curl http://data.biostarhandbook.com/books/rnaseq/code/heatmap.r > heatmap.r
+
+# Perform the differential expression detection with edger.
+cat counts.txt | Rscript edger.r 3x3 > results.csv
+
+# Draw the heatmap from the results.
+cat results.csv | Rscript heatmap.r > results.pdf
