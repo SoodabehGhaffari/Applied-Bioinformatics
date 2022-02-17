@@ -1,0 +1,21 @@
+# Make a directory to hold the sequences
+mkdir -p ref
+
+# Fetch the sequences for the project.
+esearch -db protein -query PRJNA257197 | efetch -format fasta > ref/prots_2014.fa
+
+# Run a sanity check to verify it all went well.
+seqkit stats ref/prots_2014.fa
+
+esearch -db "nucleotide" -query PRJNA257197 | efetch -format fasta > ref/nucleotide_2014.fa
+
+file                    format  type  num_seqs    sum_len  min_len   avg_len  max_len
+ref/nucleotide_2014.fa  FASTA   DNA        249  4,705,429   18,613  18,897.3   18,959
+
+makeblastdb -dbtype nucl -in ref/nucleotide_2014.fa -out ref/nucleotide_2014
+
+#I used "Redo: Genomic surveillance elucidates Ebola virus origin" for database and downloaed all the nucleotide fast files and ran blastn. The results are presented as a separate file.
+#Also I ran blastx with the protein database in the same paper.  Results are in a separate fiel.
+
+
+

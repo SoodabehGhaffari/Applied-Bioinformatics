@@ -1,0 +1,45 @@
+BLASTX 2.5.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: ref/prots_2014.fa
+           2,240 sequences; 1,367,025 total letters
+
+
+
+Query= mystery2
+
+Length=419
+
+
+***** No hits found *****
+
+
+
+Lambda      K        H        a         alpha
+   0.318    0.134    0.401    0.792     4.96 
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6 
+
+Effective search space used: 75397455
+
+
+  Database: ref/prots_2014.fa
+    Posted date:  Oct 17, 2021  11:38 PM
+  Number of letters in database: 1,367,025
+  Number of sequences in database:  2,240
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 12
+Window for multiple hits: 40
