@@ -1,0 +1,45 @@
+@SQ     SN:AF086833.2   LN:18959
+@PG     ID:bwa  PN:bwa  VN:0.7.17-r1188 CL:bwa mem refs/AF086833.fa SRR1972739_1.fastq SRR1972739_2.fastq
+
+SRR1972739.1    83      AF086833.2      15684   60      69M32S  =       15600   -153    TTTAGATTTAACAAGATACCGAGAAAATGAATTGATTTATGACAATAATCCTCTAAAAGGAGGACTCAAATGAGATATTGCAATTGAGTCCTCCTTTTAGA   DDDDDEEEEEDEEFFFEDHHHHIJJJJJJJ
+JJJJJJJJJJIGIJJJJJJJJJJJJJJJJJJJIGIGJJJJJJJJJJJJJJIJJJJJJIFHHHHFFFFFCCC   NM:i:2  MD:Z:27C16G24   MC:Z:101M       AS:i:59 XS:i:0  SA:Z:AF086833.2,15735,+,33M68S,60,0;
+
+column 1 is the quary name:SRR1972739.1
+column 2 is 83 which is a bitwise flags.
+column 3 is the reference name (AF086833.2).
+column 4 is the leftmost coordinate of the alignment (15684).
+column 5 is mapping quality (60). mapping quality is equal to -10*log Pr(mapping position is wrong). Here, the likelihood the mapping is incorrect 1/10^6.
+column 6 is CIGAR representation of alignment (69M32S) showing 69 match or mismatch and 32 S (Segment of the query sequence that does not appear in the alignment).
+column 7 is RNEXT (Read name of the mate) which is equal to "="."=" means that RNEXT is identical RNAME.
+column 8 is the position of the mate (15600).
+column 9 is the distance between the leftmost coordinates(TLEN). Here, it is equal to -153.
+
+column 10 is the read sequence (TTTAGATTTAACAAGATACCGAGAAAATGAATTGATTTATGACAATAATCCTCTAAAAGGAGGACTCAAATGAGATATTGCAATTGAGTCCTCCTTTTAGA   DDDDDEEEEEDEEFFFEDHHHHIJJJJJJJ
+JJJJJJJJJJIGIJJJJJJJJJJJJJJJJJJJIGIGJJJJJJJJJJJJJJIJJJJJJIFHHHHFFFFFCCC).
+
+column 11 is the ASCII of base quality plus 33 (NM:i:2). 
+
+
+Problem 2
+ 
+number of alignments are on the forward strand
+86024
+number of alignments are on the reverse strand
+62073
+number of alignments have pairs pointing towards each other
+146953
+number of alignments have pairs pointing in the same direction
+1144
+number of primary alignments on the forward direction
+85330
+
+properties of the command below:
+  samtools view -f 48 -F 388 yourfile.bam
+
+The command above is equivalent to the command below:
+samtools view -f 16 -f 32 -F 128 -F 256 -F 4  yourfile.bam
+
+Thereforem, the results show the alignment(4) which are not secondary alignment (256) and not the second in pair (128) either. The results are on the reverse strand (16) and the sequence of next segment in template is reverse complemented (32).
+
+
+
