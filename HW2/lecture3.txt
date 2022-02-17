@@ -1,0 +1,24 @@
+lecture 3
+1.cat SDG_features.tab | cut -f 2| sort| uniq -c > question1.txt
+
+2.$ cat SDG_features.tab | cut -f 2 | sort | uniq -c | sort -rn| head
+   7074 CDS
+   6604 ORF
+    484 noncoding_exon
+    383 long_terminal_repeat
+    377 intron
+    352 ARS
+    299 tRNA_gene
+    196 ARS_consensus_sequence
+     91 transposable_element_gene
+     77 snoRNA_gene
+
+3. $ cat SDG_features.tab | cut -f 2 | sort | uniq -c | sort -rn| tail -n 1
+      1 intein_encoding_region
+
+4. The command that is not discussed in the class and I think it is useful:
+
+sed -i 's/originalname/newname/g' inputfile.txt : this command replaces all originalname in the file with newname in inputfile.txt
+
+5. We can use this to replace one feature of specific gene for all ocurrence in SDG_features.tab
+

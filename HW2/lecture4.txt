@@ -1,0 +1,12 @@
+ARS:A sequence that can autonomously replicate, as a plasmid, when transformed into a bacterial host.
+
+ARS is a origin of replication which is part of replicon.
+
+
+gene of interest:PCSK9
+yes, it is annotated. 
+proprotein convertase subtilisin/kexin type 9
+
+PCSK9-LDLR:A protein complex consisting of the serine protease PCSK9 (proprotein convertase subtilisin/kexin-9) and a low-density lipoprotein receptor (LDLR). Interaction typically occurs through the epidermal growth factor-like repeat A (EGF-A) domain of the LDLR, and complex formation promotes degradation of the LDLR through the endosome/lysosome pathway.
+
+It is a common observed function.
