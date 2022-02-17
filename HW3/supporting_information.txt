@@ -1,0 +1,9 @@
+The first column contains the name of the annotation data category.
+The second column contains the number of genes in the reference list that map to this particular annotation data category.
+The third column contains the number of genes in your uploaded list that map to this annotation data category.
+The fourth column contains the expected value, which is the number of genes you would expect in your list for this category, based on the reference list.
+The fifth column shows the Fold Enrichment of the genes observed in the uploaded list over the expected (number in your list divided by the expected number). If it is greater than 1, it indicates that the category is overrepresented in your experiment. Conversely, the category is underrepresented if it is less than 1.
+The sixth column has either a + or -. A plus sign indicates over-representation of this category in your experiment: you observed more genes than expected based on the reference list (for this category, the number of genes in your list is greater than the expected value). Conversely, a negative sign indicates under-representation.
+The seventh column is the raw p-value.
+The eighth column is the False Discovery Rate.
+ By default a critical value of 0.05 is used to filter results, so all results shown are valid for an overall FDR<0.05 even if the FDR for an individual comparison is greater than that value.
